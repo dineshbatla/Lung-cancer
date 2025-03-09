@@ -6,7 +6,7 @@ import cv2
 from PIL import Image
 import io
 
-1y3M7qBImeN_IbxjYEpNRMc2HBWkuE9eQ
+
 file_id = "1y3M7qBImeN_IbxjYEpNRMc2HBWkuE9eQ"
 # Path to save the model
 model_path = "model.h5"
