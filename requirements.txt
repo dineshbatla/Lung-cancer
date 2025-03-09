@@ -3,3 +3,7 @@ numpy
 opencv-python
 pillow
 streamlit
+cv2
+seaborn
+matplotlib
+scikit
