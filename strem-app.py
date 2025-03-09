@@ -1,22 +1,32 @@
 import streamlit as st
 import tensorflow as tf
+import gdown
 import numpy as np
 import cv2
 from PIL import Image
 import io
 
-# Load the model (ensure the file path is correct)
+1y3M7qBImeN_IbxjYEpNRMc2HBWkuE9eQ
+file_id = "1y3M7qBImeN_IbxjYEpNRMc2HBWkuE9eQ"
+# Path to save the model
+model_path = "model.h5"
+
+# Function to download and load the model
 @st.cache_resource
 def load_model():
-    try:
-        model = tf.keras.models.load_model(r"C:\Users\tapan\Downloads\lung_cancer_model.h5")  # Change path if needed
-        st.success("Model loaded successfully!")
-        return model
-    except Exception as e:
-        st.error(f"Error loading model: {e}")
-        return None
+    # Download model from Google Drive
+    gdown.download(f"https://drive.google.com/uc?id={file_id}", model_path, quiet=False)
+    
+    # Load the model
+    model = tf.keras.models.load_model(model_path)
+    return model
 
+st.title("Lung Cancer Detection")
+
+# Load the model
 model = load_model()
+
+st.write("✅ Model Loaded Successfully!")
 
 # Image Preprocessing Function
 def preprocess_image(uploaded_file):
