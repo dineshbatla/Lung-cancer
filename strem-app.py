@@ -60,5 +60,5 @@ if uploaded_file is not None:
 
         # Show results
         st.subheader(f"Prediction: {predicted_class}")
-        st.write(f"Confidence: {confidence:.2f}")
+       
 
